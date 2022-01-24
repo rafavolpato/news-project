@@ -1,0 +1,62 @@
+.body html { height: 100%; }
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.center {
+    font-size: 1cm;
+    text-align: center;
+}
+
+.header {
+    position: fixed;
+    width: 500px;
+    margin-top: 70px;
+
+}
+.header div {
+    height: 60px;
+}
+
+.container {
+    position: fixed;
+    width: 500px;
+    margin-top: 150px;
+}
+
+.container div {
+    height: 620px;
+}
+
+.column-left {
+    width: 32%;
+    left: 1;
+    background: lightsteelblue;
+    position: fixed;
+}
+.column-center {
+    width: 32%;
+    background: lightgoldenrodyellow;
+    margin-left: 33%;
+    position: fixed;
+}
+.column-right {
+    width: 33%;
+    right: 8px;
+    position: fixed;
+    background: lightgrey;
+}

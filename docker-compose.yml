@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  angular: 
+    build: news-site
+    ports: 
+      - 80:80
+      
+  api:
+    build: ./news-api
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./news-site-api/.:/code
+    ports:
+      - "8000:8000"
+

@@ -1,0 +1,49 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/news-site-site/dist
+/news-site/tmp
+/news-site/out-tsc
+/news-site/bazel-out
+
+# Node
+/news-site/node_modules/*
+/news-site/package-lock.json
+/news-site/npm-debug.log
+/news-site/yarn-error.log
+
+# IDEs and editors
+/news-site/.idea/
+/news-site/.project
+/news-site.classpath
+/news-site/.c9/
+/news-site/*.launch
+/news-site/.settings/
+/news-site/*.sublime-workspace
+
+# Visual Studio Code
+/news-site/.vscode/*
+/news-site/!.vscode/settings.json
+/news-site/!.vscode/tasks.json
+/news-site/!.vscode/launch.json
+/news-site/!.vscode/extensions.json
+/news-site/.history/*
+
+# Miscellaneous
+/news-site/.angular/cache
+/news-site/.sass-cache/
+/news-site/connect.lock
+/news-site/coverage
+/news-site/libpeerconnection.log
+/news-site/testem.log
+/news-site/typings
+
+# System files
+/news-site/.DS_Store
+/news-site/Thumbs.db
+
+.git
+
+# Migrations will be runned again to create a new database
+/news-site-api/api/migrations/
+/news-site-api/db.sqlite3
