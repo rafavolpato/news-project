@@ -42,8 +42,85 @@
 /news-site/.DS_Store
 /news-site/Thumbs.db
 
-.git
 
-# Migrations will be runned again to create a new database
-/news-site-api/api/migrations/
-/news-site-api/db.sqlite3
+# Created by https://www.toptal.com/developers/gitignore/api/django,python,pycharm
+# Edit at https://www.toptal.com/developers/gitignore?templates=django,python,pycharm
+
+### Django ###
+/news-site/*.log
+/news-site/*.pot
+/news-site/*.pyc
+/news-site/__pycache__/
+/news-site/local_settings.py
+/news-site/db.sqlite3
+/news-site/db.sqlite3-journal
+/news-site/media
+/news-site/api/migrations/
+
+# If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
+# in your Git repository. Update and uncomment the following line accordingly.
+# <django-project-name>/staticfiles/
+
+### Django.Python Stack ###
+# Byte-compiled / optimized / DLL files
+/news-site/*.py[cod]
+/news-site/*$py.class
+
+# C extensions
+/news-site/*.so
+
+# Distribution / packaging
+/news-site/.Python
+/news-site/build/
+/news-site/develop-eggs/
+/news-site/dist/
+/news-site/downloads/
+/news-site/eggs/
+/news-site/.eggs/
+/news-site/lib/
+/news-site/lib64/
+/news-site/parts/
+/news-site/sdist/
+/news-site/var/
+/news-site/wheels/
+/news-site/share/python-wheels/
+/news-site/*.egg-info/
+/news-site/.installed.cfg
+/news-site/*.egg
+/news-site/MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+/news-site/*.manifest
+/news-site/*.spec
+
+# Installer logs
+/news-site/pip-log.txt
+/news-site/pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+/news-site/htmlcov/
+/news-site/.tox/
+/news-site/.nox/
+/news-site/.coverage
+/news-site/.coverage.*
+/news-site/.cache
+/news-site/nosetests.xml
+/news-site/coverage.xml
+/news-site/*.cover
+/news-site/*.py,cover
+/news-site/.hypothesis/
+/news-site/.pytest_cache/
+/news-site/cover/
+
+# PyCharm
+#  JetBrains specific template is maintainted in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+/news-site/.idea/
+
+# git
+/news-site/.git
+
