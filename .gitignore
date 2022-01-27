@@ -133,6 +133,7 @@
 /news-api/.hypothesis/
 /news-api/.pytest_cache/
 /news-api/cover/
+**/.pytest_cache/
 
 # PyCharm
 #  JetBrains specific template is maintainted in a separate JetBrains.gitignore that can
@@ -146,3 +147,5 @@
 
 .idea/
 
+!/news-api/api/tests/.pytest_cache/
+!/news-api/.pytest_cache/
