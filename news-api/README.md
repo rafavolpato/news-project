@@ -27,7 +27,7 @@ $ python3 -m venv path/to/new/virtual/environment
 #Activate it:
 $ source path/to/new/virtual/environment/activate/bin/activate
 #Install the requirements
-$ pip install -r requirements.txt
+$ pip install -r oldrec.bak
 #Create migration files
 $ python manage.py makemigrations api
 #Run the migration files to create the database

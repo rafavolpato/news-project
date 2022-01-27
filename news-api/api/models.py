@@ -10,5 +10,5 @@ class Entry(models.Model):
     link = models.CharField(max_length=500, null=True, db_index=True)
     title = models.CharField(max_length=100, null=True)
     summary = models.CharField(max_length=500, null=True)
-    published = models.DateTimeField(auto_now_add=True)
+    published = models.DateTimeField()
     click_count = models.IntegerField()

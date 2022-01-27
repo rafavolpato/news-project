@@ -1,6 +1,11 @@
 import datetime
+import pickle
+
 from django.core.management.base import BaseCommand
+
+import news_project.utils
 from api.models import Entry
+from news_project import utils
 import feedparser
 
 class Command(BaseCommand):
@@ -46,23 +51,24 @@ class Command(BaseCommand):
         self.stdout.write(f"Total records added: {self.total_records_added}", ending='\n')
 
 
-
 def get_entries(site=None):
     """
-    Take link of rss feed as argument
+    From site, parse rss
     """
-    if site is not None:
-        # parsing blog feed
-        feed = feedparser.parse(site["url"])
+    # parsing blog feed
+    feed = feedparser.parse(site["url"])
 
-        # getting lists of entries via .entries
-        entries = feed.entries
+    # getting lists of entries via .entries
+    entries = feed.entries
+    # import os
+    # file_name = os.path.join(os.path.dirname(__file__), 'tests/entries.txt')
+    # outfile = open(file_name, 'wb')
+    # pickle.dump(entries, outfile)
+    # outfile.close()
 
-        entry_list = parse_entries(entries)
+    entry_list = parse_entries(entries)
 
-        return entry_list  # returning the details which is dictionary
-    else:
-        return None
+    return entry_list  # returning the details which is dictionary
 
 
 def parse_entries(entries):
@@ -75,14 +81,14 @@ def parse_entries(entries):
 
         # if any entry doesn't have information then throw error.
         try:
-            temp["id"] = entry.id
-            temp["title"] = entry.title
-            temp["link"] = entry.link
-            temp["published"] = entry.published
-            temp["summary"] = entry.summary
+            temp["id"] = entry["id"]
+            temp["title"] = entry["title"]
+            temp["link"] = entry["link"]
+            temp["published"] = utils.convert_feed_date(entry["published"])
+            temp["summary"] = entry["summary"]
+            entry_list.append(temp)
         except:
             pass
-        entry_list.append(temp)
 
     return entry_list
 

@@ -16,7 +16,7 @@ class EntryViewSet(viewsets.ModelViewSet):
     """
     http_method_names = ['get', 'patch']
     serializer_class = serializers.EntrySerializer
-    queryset = Entry.objects.all()
+    queryset = Entry.objects.all().order_by('-published')
 
     def get_queryset(self):
         """
@@ -26,10 +26,13 @@ class EntryViewSet(viewsets.ModelViewSet):
         """
         sites = ["mashable", "techrunch", "theverge"]
         site_name = self.request.query_params.get('site', None)
+        id = self.request.query_params.get('id', None)
         if site_name not in sites:
             raise ValidationError(f"Invalid site")
 
         queryset = Entry.objects.all().filter(site_name=site_name)
+        if id:
+            queryset.filter(id=id)
         return queryset
 
     def update(self, request, *args, **kwargs):
