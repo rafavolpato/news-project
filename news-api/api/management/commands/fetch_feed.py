@@ -40,14 +40,14 @@ class Command(BaseCommand):
         for site in sites:
             self.stdout.write(f"Reading feeds from {site['name']}", ending='\n')
             entries = get_entries(site)  # return feed data as a list
+            self.total_records_read += len(entries)
             self.stdout.write(f"Total records read from {site['name']}: {len(entries)}", ending='\n')
             self.stdout.write(f"Adding feeds...", ending='\n')
             total_added_entries = insert_entry(site, entries)
-            self.stdout.write(f"Total records added from {site['name']}: {total_added_entries}", ending='\n')
-            self.total_records_read += len(entries)
             self.total_records_added += total_added_entries
+            self.stdout.write(f"Total records added from {site['name']}: {total_added_entries}", ending='\n')
 
-        self.stdout.write(f"Total records read: {self.total_records_added}", ending='\n')
+        self.stdout.write(f"Total records read: {self.total_records_read}", ending='\n')
         self.stdout.write(f"Total records added: {self.total_records_added}", ending='\n')
 
 
