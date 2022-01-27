@@ -65,6 +65,24 @@
 # Byte-compiled / optimized / DLL files
 /news-api/*.py[cod]
 /news-api/*$py.class
+# Byte-compiled / optimized / DLL files
+/news-api/__pycache__/
+/news-api/*.py[cod]
+
+# Distribution / packaging
+/news-api/bin/
+/news-api/build/
+/news-api/develop-eggs/
+/news-api/dist/
+/news-api/eggs/
+/news-api/lib/
+/news-api/lib64/
+/news-api/parts/
+/news-api/sdist/
+/news-api/var/
+/news-api/*.egg-info/
+/news-api/.installed.cfg
+/news-api/*.egg
 
 # C extensions
 /news-site/*.so
