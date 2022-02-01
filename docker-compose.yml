@@ -2,12 +2,13 @@ version: "3.9"
 
 services:
   api:
-    build: ./news-api
+    build:
+      dockerfile: ./news-api/Dockerfile
+      context: ./
     command: python manage.py runserver 0.0.0.0:8000
-#    command: gunicorn news_project.wsgi:application --bind 0.0.0.0:443
-    #RUN gunicorn  --certfile=/etc/certs/localhost.crt --keyfile=/etc/certs/localhost.key news_project.wsgi:application --bind 0.0.0.0:443
     expose:
       - 8000
+
 
   nginx:
     build:
@@ -17,4 +18,3 @@ services:
       - 443:443
       - 80:80
     restart: "on-failure"
-
