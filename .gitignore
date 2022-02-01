@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+.idea/
+nginx/certs/
+
 # Compiled output
 /news-site-site/dist/*
 /news-site/tmp
@@ -157,9 +160,4 @@
 # Production config file
 /nginx/certs/!/news-api/news_project/.pytest_cache/
 !/news-api/news_project/.pytest_cache/
-<<<<<<< HEAD
 
-### Nginx Project ###
-/nginx/certs/
-=======
->>>>>>> 8ad077ab7e7bae0da8c31dd4c5b9abfedb42fd9c
