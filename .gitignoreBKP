@@ -157,6 +157,9 @@
 # Production config file
 /nginx/certs/!/news-api/news_project/.pytest_cache/
 !/news-api/news_project/.pytest_cache/
+<<<<<<< HEAD
 
 ### Nginx Project ###
 /nginx/certs/
+=======
+>>>>>>> 8ad077ab7e7bae0da8c31dd4c5b9abfedb42fd9c
