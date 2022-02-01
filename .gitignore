@@ -151,4 +151,8 @@
 /news-api/.pytest_cache/
 
 # Production config file
-!/news-api/config/production.env
+/news-api/config/production.env
+news-api/stackhawk.yml
+
+# Production config file
+/nginx/certs/

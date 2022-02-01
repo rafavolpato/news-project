@@ -9,24 +9,32 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-##x#8!6+upde=#sh&4d%w)iidr4_0&%pl$4ns$(%rmq7x4(cwj'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+import configparser
+config = configparser.ConfigParser()
+config.read('config/production.env')
 
-ALLOWED_HOSTS = []
+try:
+    SECRET_KEY = config['DEFAULT']['SECRET_KEY']
+except:
+    SECRET_KEY = PB+JoLLCgNaSgaxajHCStIDvVPdmWTPUuGdHScJA
 
+try:
+    DEBUG = config['DEFAULT']['DEBUG']
+except:
+    DEBUG = False
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
 
@@ -44,15 +52,17 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'csp.middleware.CSPMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.midd'
-    'leware.SessionMiddleware',
+    "django_permissions_policy.PermissionsPolicyMiddleware",
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'api.middleware.RemoveHeaders.RemoveHeaders'
 ]
 
 ROOT_URLCONF = 'news_project.urls'
@@ -120,10 +130,16 @@ USE_L10N = True
 USE_TZ = True
 
 
+CSP_IMG_SRC = ("'self'")
+CSP_EXCLUDE_URL_PREFIXES = ("/api/docs")
+CSP_DEFAULT_SRC = ("'none'")
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+ROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_URL = 'api/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -137,4 +153,25 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 20
 }
 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+PERMISSIONS_POLICY = {
+    "accelerometer": [],
+    "ambient-light-sensor": [],
+    "autoplay": [],
+    "camera": [],
+    "display-capture": [],
+    "document-domain": [],
+    "encrypted-media": [],
+    "fullscreen": [],
+    "geolocation": [],
+    "gyroscope": [],
+    "interest-cohort": [],
+    "magnetometer": [],
+    "microphone": [],
+    "midi": [],
+    "payment": [],
+    "usb": [],
+}
 
