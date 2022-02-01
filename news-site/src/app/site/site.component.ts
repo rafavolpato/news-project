@@ -19,12 +19,10 @@ export class SiteComponent implements OnInit {
   ngOnInit(): void {
     let params = new HttpParams().set('site', this.site);
 
-    this.httpClient.get<Page>('http://localhost:8000/api/entry/', { params: params, responseType: 'json' }).subscribe(
+    this.httpClient.get<Page>('https://localhost/api/entry/', { params: params, responseType: 'json' }).subscribe(
       res => {
         this.page = new Page(res);
         this.news = this.page.results
-        console.log(this.news)
-        console.log(typeof(this.news))
       },
       err => {
         console.log(err)
