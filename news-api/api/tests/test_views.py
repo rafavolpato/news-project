@@ -3,6 +3,7 @@ from django.urls import reverse
 
 from api.models import Entry
 from news_project.utils import convert_feed_date
+from datetime import datetime, timezone
 
 entry_list_url = reverse('entry-list')
 entry_detail_url = reverse('entry-detail', args=[1])
@@ -36,7 +37,7 @@ def assert_entries(**kwargs) -> Entry:
         assert entry_record.site_name == entry_response["site_name"]
         assert entry_record.link == entry_response["link"]
         assert entry_record.summary == entry_response["summary"]
-        assert entry_record.published == entry_response["published"]
+        assert datetime.strftime(entry_record.published, '%Y-%m-%dT%H:%M:%SZ') == entry_response["published"]
 
 
     return _assert_entries
