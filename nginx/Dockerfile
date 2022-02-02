@@ -20,10 +20,5 @@ COPY --from=build /usr/local/app/dist/news /usr/share/nginx/html
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 # COPY nginx/nginx.conf /etc/nginx/
 
-# COPY certificates
-# COPY nginx/certs/cert.pem /etc/letsencrypt/
-# COPY nginx/certs/key.pem /etc/letsencrypt/
-# COPY nginx/certs/localhost.crt /etc/letsencrypt/
-# COPY nginx/certs/localhost.key /etc/letsencrypt/
 COPY nginx/certs/localhost+2-key.pem /etc/letsencrypt/
 COPY nginx/certs/localhost+2.pem /etc/letsencrypt/
