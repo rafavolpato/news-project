@@ -7,3 +7,5 @@ django-cors-headers
 django-extensions
 gunicorn==20.0.4
 django-csp
+django-permissions-policy
+pytest

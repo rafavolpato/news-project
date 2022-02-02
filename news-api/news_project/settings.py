@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 import configparser
 config = configparser.ConfigParser()
-config.read('config/production.env')
+config.read('config/config.env')
 
 try:
     SECRET_KEY = config['DEFAULT']['SECRET_KEY']
 except:
-    SECRET_KEY = PB+JoLLCgNaSgaxajHCStIDvVPdmWTPUuGdHScJA
+    SECRET_KEY='m8yz!n0-a+5o1sdre*hb#o!2sioq&-9+z9uhf()n_3d5^-6r)$'
 
 try:
     DEBUG = config['DEFAULT']['DEBUG']
