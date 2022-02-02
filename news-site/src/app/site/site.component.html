@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="noOverflow" *ngFor="let new of news">
-        <a href={{new.link}}> {{new.title}} </a>
+        <a target="_blank" href="{{new.link}}" rel="noopener noreferrer">{{new.title}}</a>
       </div>
     </div>
   </div>
