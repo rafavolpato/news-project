@@ -44,9 +44,13 @@ $ https://github.com/rafavolpato/news-project.git
 
 ```bash
 # Enter the project directory
-cd news-project
+% cd news-project
+# create a self signed certificate (localhost+2-key.pem - localhost+2.pem) and move it to nginx/certs/
+% openssl req -nodes -x509 -newkey rsa:4096 -keyout localhost+2-key.pem -out localhost+2.pem -sha256 -days 365 -subj '/CN=localhost'
 # Run the docker-compose file
-$ dokcer-compose up
+% $ dokcer-compose up
 
-Open the browser go on: http://localhost
+
+
+Open the browser go on: localhost
 ```

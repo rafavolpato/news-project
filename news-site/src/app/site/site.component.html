@@ -2,7 +2,9 @@
   <div>
     <div class="row">
       <div class="noOverflow" *ngFor="let new of news">
-        <a target="_blank" href="{{new.link}}" rel="noopener noreferrer">{{new.title}}</a>
+        <a target="_blank" href="{{new.link}}" rel="noopener noreferrer" (click)="onSave($event)" id={{new.id}} >
+          ({{new.click_count}} click{{new.click_count <= 1 ? '' : 's'}}) {{new.title}}
+        </a>
       </div>
     </div>
   </div>

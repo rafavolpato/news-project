@@ -5,7 +5,7 @@ export class News extends Page {
   public link!: string;
   public title!: string;
   public summary!: string;
-  public tenpo!: number;
+  public published!: number;
   public click_count!: number;
 
   public constructor (init?: Partial<News>) {
