@@ -14,7 +14,7 @@
 
 ## About
 
-BairesDev News Project was developed using:
+News Project was developed using:
 - Docker Compose
 - Dokcer
 - Python/Django
