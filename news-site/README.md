@@ -1,4 +1,4 @@
-<h1 align="center">BairesDev News Project - Front-End</h1>
+<h1 align="center">News Project - Front-End</h1>
 <h1 align="center">
     <a href="https://angular.io/cli">🔗 Angular - version 13.1.3</a>
 </h1>
@@ -14,7 +14,7 @@
 
 ## About
 
-BairesDev News Project - Front-End
+News Project - Front-End
 
 ## Installation
 
