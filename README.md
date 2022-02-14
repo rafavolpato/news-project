@@ -1,4 +1,4 @@
-<h1 align="center">BairesDev News Project</h1>
+<h1 align="center">News Project</h1>
 <h1 align="center">
     <a href="https://www.docker.com/get-started">🔗 Docker compose project</a>
 </h1>
