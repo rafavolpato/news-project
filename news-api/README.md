@@ -1,4 +1,4 @@
-<h1 align="center">BairesDev News Project - Back-End</h1>
+<h1 align="center">News Project - Back-End</h1>
 <h1 align="center">
     <a href="https://www.djangoproject.com/">🔗 Python/Django - Version</a>
 </h1>
@@ -15,7 +15,7 @@
 
 ## About
 
-BairesDev News Project - Back-End
+News Project - Back-End
 
 Since it is not a production version, the DEBUG option was not turned to FALSE.
 
